@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mvc.dao.UserMapper">
+	<resultMap type="com.zhao.entity.User" id="BaseResultMap">
+		<id property="uid" column="uid" jdbcType="INTEGER"/>
+		<result property="name" column="name" jdbcType="VARCHAR"/>
+		<result property="num" column="num" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 
+		通过用户名查询一个用户，如果无参数传递，则不需要parameterType属性
+		parameterMap表示需要在自定义一个parameterMap标签，当属性值为java.util.Map时表示传入多个参数
+		resultMap表示返回多列数据，仅用于select语句
+		resultType表示返回单列数据，仅用于select语句
+	 -->
+	<select id="loadAllUser"  resultMap="BaseResultMap">
+		select name,num from bar
+	</select>
+	
+	
+	
+	
+</mapper>
